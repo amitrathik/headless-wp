@@ -7,11 +7,6 @@
         "johnpbloch/wordpress-core": "^6.3",
         "amitrathik/classic-theme" : "^1.0"
     },
-    "autoload": {
-        "psr-4": {
-            "Amitrathik\\Wp\\": "src/"
-        }
-    },
     "authors": [
         {
             "name": "Amit Rathi",
@@ -38,8 +33,17 @@
         }
     },
     "config": {
+        "vendor-dir": "content/vendor",
         "allow-plugins": {
-            "johnpbloch/wordpress-core-installer": true
+            "johnpbloch/wordpress-core-installer": true,
+            "composer/installers": true
+        }
+    },
+    "extra": {
+        "wordpress-install-dir": "wordpress",
+        "installer-paths": {
+            "content/plugins/{$name}/": ["type:wordpress-plugin"],
+            "content/themes/{$name}/": ["type:wordpress-theme"]
         }
     }
 }
