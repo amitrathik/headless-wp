@@ -1,2 +1,11 @@
 .env
 .htaccess
+.DS_Store
+wordpress/*
+!wordpress/.keep
+mysql/*
+!mysql/.keep
+logs/nginx/*
+!logs/nginx/.keep
+_trash
+
