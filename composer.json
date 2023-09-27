@@ -1,0 +1,49 @@
+{
+    "name": "amitrathik/wp",
+    "description": "A dev env for wp",
+    "type": "project",
+    "require": {
+        "johnpbloch/wordpress-core-installer": "^2.0",
+        "johnpbloch/wordpress-core": "^6.3",
+        "amitrathik/classic-theme" : "^1.0"
+    },
+    "authors": [
+        {
+            "name": "Amit Rathi",
+            "email": "amit.rathi.k@gmail.com"
+        }
+    ],
+    "repositories": {
+        "wppackagist": {
+            "type": "composer",
+            "url": "https://wpackagist.org"
+        },
+        "classic-theme":{
+            "type": "package",
+            "package": {
+                "name": "amitrathik/classic-theme",
+                "type": "wordpress-theme",
+                "version": "1.0",
+                "source": {
+                    "type": "git",
+                    "url": "git@github.com:amitrathik/classic-theme.git",
+                    "reference": "main"
+                }
+            }
+        }
+    },
+    "config": {
+        "vendor-dir": "content/vendor",
+        "allow-plugins": {
+            "johnpbloch/wordpress-core-installer": true,
+            "composer/installers": true
+        }
+    },
+    "extra": {
+        "wordpress-install-dir": "wordpress",
+        "installer-paths": {
+            "content/plugins/{$name}/": ["type:wordpress-plugin"],
+            "content/themes/{$name}/": ["type:wordpress-theme"]
+        }
+    }
+}
